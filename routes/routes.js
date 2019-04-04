@@ -19,7 +19,9 @@ const eventHandlers = fromSnakeToCamelCase(require('require-all')(__dirname + '/
 /**
     External adapter must implement all the events that are found in ./routes/eventHandler
  **/
-
+route.post('/ping', async function(req, res) {
+    return res.send({message: 'pong'});
+});
 
 route.post('/', async function(req, res) {
     let body = req.body;
